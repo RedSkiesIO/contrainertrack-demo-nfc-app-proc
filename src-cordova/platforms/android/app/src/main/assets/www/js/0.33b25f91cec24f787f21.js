@@ -1,0 +1,224 @@
+webpackJsonp([0],{
+
+/***/ "2NXm":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/pages/index.vue
+
+
+/* harmony default export */ var pages = ({
+  data: function data() {
+    return {
+      recievingAddress: 'kjshgdjsdgfujyg'
+    };
+  },
+
+
+  name: 'PageIndex',
+
+  created: function created() {
+    console.log(this.$q);
+    console.log(window);
+    console.log(window.nfc);
+    console.log(window.ndef);
+  },
+
+
+  methods: {
+    recievePayment: function recievePayment() {
+      var _this = this;
+
+      document.addEventListener('deviceready', function () {
+        window.nfc.addNdefListener(function (payload) {
+          _this.log(payload);
+        }, function (success) {
+          _this.log('listen addNdefListener successfull');
+          _this.log(success);
+        }, function () {
+          _this.log('listen addNdefListener failed');
+        });
+
+        window.nfc.addTagDiscoveredListener(function (payload) {
+          _this.log(payload);
+        }, function (success) {
+          _this.log('listen addTagDiscoveredListener successfull');
+          _this.log(success);
+        }, function (failed) {
+          _this.log('listen addTagDiscoveredListener failed');
+          _this.log(failed);
+        });
+
+        window.nfc.addMimeTypeListener('cryptowallet/payment', function (payload) {
+          _this.log(payload);
+        }, function (success) {
+          _this.log('listen addMimeTypeListener successfull');
+          _this.log(success);
+        }, function (failed) {
+          _this.log('listen addMimeTypeListener failed');
+          _this.log(failed);
+        });
+
+        window.nfc.addNdefFormatableListener(function (payload) {
+          _this.log(payload);
+        }, function (success) {
+          _this.log('listen addNdefFormatableListener successfull');
+          _this.log(success);
+        }, function (failed) {
+          _this.log('listen addNdefFormatableListener failed');
+          _this.log(failed);
+        });
+      }, false);
+    },
+    makePayment: function makePayment() {
+      var _this2 = this;
+
+      var record = window.ndef.mimeMediaRecord('cryptowallet/payment', window.nfc.stringToBytes('sdgfsdgsfgshsfdhsd'));
+      console.log(record);
+
+      window.nfc.share([record], function (success) {
+        _this2.log('share successfull');
+        _this2.log(success);
+      }, function (reason) {
+        _this2.log('share failed ');
+        _this2.log(reason);
+      });
+    },
+    log: function log(payload) {
+      console.log(payload);
+    }
+  }
+});
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-57509004","hasScoped":false,"optionsId":"0","buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/pages/index.vue
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "q-page",
+    { staticClass: "flex flex-center" },
+    [
+      _c("q-btn", {
+        attrs: { color: "primary", label: "make payment" },
+        on: { click: _vm.makePayment }
+      }),
+      _vm._v(" "),
+      _c("q-btn", {
+        attrs: { color: "primary", label: "recieve payment" },
+        on: { click: _vm.recievePayment }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-57509004", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/component-normalizer.js
+var component_normalizer = __webpack_require__("XyMi");
+
+// CONCATENATED MODULE: ./src/pages/index.vue
+var disposed = false
+function injectStyle (context) {
+  if (disposed) return
+  __webpack_require__("qLzU")
+}
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(component_normalizer["a" /* default */])(
+  pages,
+  render,
+  staticRenderFns,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/pages/index.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-57509004", Component.options)
+  } else {
+    hotAPI.reload("data-v-57509004", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ var src_pages = __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "qLzU":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("zEOH");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("rjj0").default
+var update = add("1efb3da7", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":true}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"scoped\":false,\"sourceMap\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?{\"minimize\":false,\"sourceMap\":true}!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"optionsId\":\"0\",\"vue\":true,\"scoped\":false,\"sourceMap\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "zEOH":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("FZ+f")(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"index.vue","sourceRoot":""}]);
+
+// exports
+
+
+/***/ })
+
+});
+//# sourceMappingURL=0.33b25f91cec24f787f21.js.map

@@ -1,0 +1,4 @@
+#Thu May 10 10:10:05 BST 2018
+base.0=/srv/mobileApp/src-cordova/platforms/android/app/build/intermediates/transforms/dex/release/0
+renamed.0=classes.dex
+file.0=/srv/mobileApp/src-cordova/platforms/android/app/build/intermediates/transforms/dex/release/0/classes.dex
